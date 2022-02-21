@@ -1,0 +1,14 @@
+<div cdkDropListGroup>
+  <cdk-accordion-overview-example
+    [currentId]="currentId"
+    (sendSetting)="getSetting($event)"
+    (sendSettingForm)="getSettingForm($event)"
+  ></cdk-accordion-overview-example>
+  <app-form-builder
+    (sendId)="getId($event)"
+    [settings]="setting"
+    [settingForm] = "settingForm"
+    [currentId]="currentId"
+  ></app-form-builder>
+  <app-drag-section></app-drag-section>
+</div>

@@ -1,0 +1,68 @@
+<section>
+  <div class="drop-area">
+    <h2>Drop zone</h2>
+    <ul
+      class="list"
+      [cdkDropListData]="items"
+      cdkDropList
+      (cdkDropListDropped)="drop($event)"
+    >
+      <form [ngStyle]="settingForm" class="form">
+        <ng-container *ngFor="let item of items" [ngSwitch]="item.name">
+          <ng-template ngSwitchCase="Input">
+            <li class="item" (click)="onClick(item.id)" cdkDrag>
+              <input
+                class="input"
+                type="text"
+                [placeholder]="item.styles.placeholder || 'input'"
+                [ngStyle]="item.styles"
+              />
+            </li>
+          </ng-template>
+          <ng-template ngSwitchCase="Select">
+            <li class="item" (click)="onClick(item.id)" cdkDrag>
+              <select class="select" [ngStyle]="item.styles">
+                <option value="value-1" selected>Value-1</option>
+              </select>
+            </li>
+          </ng-template>
+          <ng-template ngSwitchCase="Textarea">
+            <li class="item" (click)="onClick(item.id)" cdkDrag>
+              <textarea
+                class="textarea"
+                [placeholder]="item.styles.placeholder || 'textarea'"
+                [ngStyle]="item.styles"
+                cdkDrag
+              ></textarea>
+            </li>
+          </ng-template>
+          <ng-template ngSwitchCase="Button">
+            <li class="item" (click)="onClick(item.id)" cdkDrag>
+              <button class="btn" [ngStyle]="item.styles" cdkDrag>
+                {{ item.styles.placeholder || "Button" }}
+              </button>
+            </li>
+          </ng-template>
+          <ng-template ngSwitchCase="Checkbox">
+            <li class="item" (click)="onClick(item.id)" cdkDrag>
+              <label
+                class="label"
+                (click)="onClick(item.id)"
+                [ngStyle]="item.styles"
+                cdkDrag
+              >
+                checkbox
+                <input
+                  class="inp-checkbox"
+                  type="checkbox"
+                  [ngStyle]="item.styles"
+                />
+              </label>
+            </li>
+          </ng-template>
+          <ng-template ngSwitchDefault>Default</ng-template>
+        </ng-container>
+      </form>
+    </ul>
+  </div>
+</section>

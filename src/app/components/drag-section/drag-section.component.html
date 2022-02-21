@@ -1,0 +1,44 @@
+<section>
+  <div class="drag-zone">
+    <h2>Drag zone</h2>
+    <ul class="list" [cdkDropListData]="items" cdkDropList>
+      <ng-container *ngFor="let item of items" [ngSwitch]="item?.name">
+        <ng-template ngSwitchCase="Input">
+          <li class="item" cdkDrag>
+            <input class="input" type="text" placeholder="input" />
+          </li>
+        </ng-template>
+        <ng-template ngSwitchCase="Select">
+          <li class="item" cdkDrag>
+            <select class="select">
+              <option value="value-1" selected>value-1</option>
+            </select>
+          </li>
+        </ng-template>
+        <ng-template ngSwitchCase="Textarea">
+          <li class="item" cdkDrag>
+            <textarea
+              class="textarea"
+              name=""
+              placeholder="textarea"
+            ></textarea>
+          </li>
+        </ng-template>
+        <ng-template ngSwitchCase="Button">
+          <li class="item" cdkDrag>
+            <button class="btn">Button</button>
+          </li>
+        </ng-template>
+        <ng-template ngSwitchCase="Checkbox">
+          <li class="item" cdkDrag>
+            <label class="label">
+              checkbox
+              <input class="inp-checkbox" type="checkbox" />
+            </label>
+          </li>
+        </ng-template>
+        <ng-template ngSwitchDefault>Default</ng-template>
+      </ng-container>
+    </ul>
+  </div>
+</section>

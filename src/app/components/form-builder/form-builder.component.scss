@@ -1,0 +1,45 @@
+.drop-area {
+  max-width: 600px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  background: white;
+  font-size: 14px;
+  border: 5px dashed red;
+}
+
+.list {
+}
+
+.item {
+  border: 2px solid red;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  background-color: #ccc;
+  cursor: move;
+}
+
+.form {
+  border: 2px solid black;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: -5px;
+  min-height: 60px;
+  background: white;
+  border-radius: 4px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}
